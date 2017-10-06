@@ -13,7 +13,7 @@ var employees = [exampleEmployee];
 console.log(employees);
 //mCost used to calculate monthly cost of all employees
 var mCost = 0;
-
+var empArr = [];
 $(document).ready(main);
 
 function main(){
@@ -32,8 +32,15 @@ function makeNewEmp(){
     console.log(firstName);
   }
   for (var i = 0; i < employees.length; i++) {
-    var empArr = employees[i];
+    empArr = employees[i];
     $('.tBody').append('<tr><td>' + empArr.firstName + '</td><td>' + empArr.lastName + '</td><td>' + empArr.eID +
     '</td><td>' + empArr.jobTitle + '</td><td>' + empArr.annSal + '</td></tr>');
   }
+  for (var k = 0; k < employees.length; k++) {
+    empArr = employees[k];
+    $('#monCost').replaceWith(mCost);
+}
+function calcAvg(){
+  mCost += empArr.annSal / employees[k];
+}
 }
