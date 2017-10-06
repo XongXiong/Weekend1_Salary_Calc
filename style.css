@@ -1,5 +1,7 @@
 header{
   font-size: 36px;
+  text-align: center;
+  font-weight: bold;
 }
 
 table, th, td {
