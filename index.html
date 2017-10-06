@@ -1,16 +1,27 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Weekend Challenge</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="jquery.js" charset="utf-8"></script>
-    <script src="client.js" charset="utf-8"></script>
-  </head>
-  <header>
+<head>
+  <meta charset="utf-8">
+  <title>Weekend Challenge</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="jquery.js" charset="utf-8"></script>
+  <script src="client.js" charset="utf-8"></script>
+</head>
+<header>
 </header>
-  <body>
-    <table>
+<body>
+  <table>
+    <thead>
+    <tr class='tHead'>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Employee Number</th>
+      <th>Job Title</th>
+      <th>Annual Salary</th>
+      <th>Month Costs</th>
+    </tr>
+  </thead>
+    <tbody>
       <tr class='tHead'>
         <th>First Name</th>
         <th>Last Name</th>
@@ -19,16 +30,18 @@
         <th>Annual Salary</th>
         <th>Month Costs</th>
       </tr>
-    </table>
-    <input class='empInfoIn' id='name'>
-    <button class='submit' id='name'>Submit</button>
-    <input class='empInfoIn' id='name'>
-    <button class='submit' id='name'>Submit</button>
-    <input class='empInfoIn' id='name'>
-    <button class='submit' id='name'>Submit</button>
-    <input class='empInfoIn' id='name'>
-    <button class='submit' id='name'>Submit</button>
-    <input class='empInfoIn' id='name'>
-    <button class='submit' id='name'>Submit</button>
-  </body>
+    </tbody>
+  </table>
+  <h3>First Name:</h3>
+  <input class='empInfoIn firstName'>
+  <h3>Last Name:</h3>
+  <input class='empInfoIn lastName'>
+  <h3>Employee Number</h3>
+  <input class='empInfoIn eID'>
+  <h3>Job Title:</h3>
+  <input class='empInfoIn jobTitle'>
+  <h3>Annual Salary:</h3>
+  <input class='empInfoIn annSal'>
+  <button class='submit annSal'>Submit</button>
+</body>
 </html>
