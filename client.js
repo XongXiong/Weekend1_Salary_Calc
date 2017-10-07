@@ -6,41 +6,46 @@ var Employee = function(firstName, lastName, eID, jobTitle, annSal){
   this.jobTitle = jobTitle;
   this.annSal = annSal;
 };
-//Sample Employee
-var exampleEmployee = new Employee('John', 'Smith', 123456, 'President', 360000);
-//Employee array to hold new inputs
-var employees = [exampleEmployee];
-console.log(employees);
+var sampleEmployee = new Employee ('John', 'Smith', 123456, 'CEO', 300000);
 //mCost used to calculate monthly cost of all employees
-var mCost = 0;
+var employees = [sampleEmployee];
+var mCost = employees[0].annSal/12;
 var empArr = [];
 $(document).ready(main);
 
 function main(){
+  $().ready(sample);
   $('.submit').on('click', makeNewEmp);
+  $('#monCost').replaceWith("<h2 id='monCost'>Average Monthly Cost = " + mCost + "</h2>");
+
 }
 
 function makeNewEmp(){
-  var employee = employees[j];
   firstName = $('.firstName').val();
   lastName = $('.lastName').val();
   eID = parseInt($('.eID').val());
   jobTitle = $('.jobTitle').val();
   annSal = parseInt($('.annSal').val());
   for (var j = 0; j < employees.length; j++) {
+    empArr = employees[j];
     employees[j] = new Employee(firstName, lastName, eID, jobTitle, annSal);
-    console.log(firstName);
   }
+
   for (var i = 0; i < employees.length; i++) {
     empArr = employees[i];
+    mCost = Math.floor(mCost + empArr.annSal / employees.length / 12);
+    console.log(empArr.annSal);
+    console.log(employees[i]);
     $('.tBody').append('<tr><td>' + empArr.firstName + '</td><td>' + empArr.lastName + '</td><td>' + empArr.eID +
     '</td><td>' + empArr.jobTitle + '</td><td>' + empArr.annSal + '</td></tr>');
+
+    $('#monCost').replaceWith("<h2 id='monCost'>Average Monthly Cost = " + mCost + "</h2>");
+    console.log(mCost);
+    return mCost;
   }
-  for (var k = 0; k < employees.length; k++) {
-    empArr = employees[k];
-    $('#monCost').replaceWith(mCost);
 }
-function calcAvg(){
-  mCost += empArr.annSal / employees[k];
-}
+
+function sample(){
+  $('.tBody').append('<tr><td>' + employees[0].firstName + '</td><td>' + employees[0].lastName + '</td><td>' + employees[0].eID +
+  '</td><td>' + employees[0].jobTitle + '</td><td>' + employees[0].annSal + '</td></tr>');
 }
