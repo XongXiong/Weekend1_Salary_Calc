@@ -6,7 +6,7 @@ var Employee = function(firstName, lastName, eID, jobTitle, annSal){
   this.jobTitle = jobTitle;
   this.annSal = annSal;
 };
-var sampleEmployee = new Employee ('John', 'Smith', 123456, 'CEO', 300000);
+var sampleEmployee = new Employee ('John', 'Smith', 123456, 'CEO', 0);
 //mCost used to calculate monthly cost of all employees
 var employees = [sampleEmployee];
 var mCost = employees[0].annSal/12;
@@ -16,8 +16,8 @@ $(document).ready(main);
 function main(){
   $().ready(sample);
   $('.submit').on('click', makeNewEmp);
-  $('#monCost').replaceWith("<h2 id='monCost'>Average Monthly Cost = " + mCost + "</h2>");
-
+  $('#monCost').replaceWith("<h2 id='monCost'>Average Monthly Cost = $" + mCost + "</h2>");
+  $('.tBody').on('click', removeEmp);
 }
 
 function makeNewEmp(){
@@ -37,15 +37,17 @@ function makeNewEmp(){
     console.log(empArr.annSal);
     console.log(employees[i]);
     $('.tBody').append('<tr><td>' + empArr.firstName + '</td><td>' + empArr.lastName + '</td><td>' + empArr.eID +
-    '</td><td>' + empArr.jobTitle + '</td><td>' + empArr.annSal + '</td></tr>');
-
-    $('#monCost').replaceWith("<h2 id='monCost'>Average Monthly Cost = " + mCost + "</h2>");
-    console.log(mCost);
+    '</td><td>' + empArr.jobTitle + '</td><td>' + '$' + empArr.annSal + '</td><td><button>X</button></td></tr>');
+    $('#monCost').replaceWith("<h2 id='monCost'>Average Monthly Cost = $" + mCost + "</h2>");
     return mCost;
   }
 }
 
 function sample(){
   $('.tBody').append('<tr><td>' + employees[0].firstName + '</td><td>' + employees[0].lastName + '</td><td>' + employees[0].eID +
-  '</td><td>' + employees[0].jobTitle + '</td><td>' + employees[0].annSal + '</td></tr>');
+  '</td><td>' + employees[0].jobTitle + '</td><td>' + '$' + employees[0].annSal + '</td><td><button class="but2">X</button></td></tr>');
+}
+
+function removeEmp(){
+
 }
