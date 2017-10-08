@@ -3,11 +3,21 @@ header{
   font-size: 75px;
   text-align: center;
   font-weight: bold;
+  text-shadow: 3px 3px darkgray;
 }
 
 table, th, td {
-    border: 1px solid black;
-    padding: 5px;
+  border: 1px solid black;
+  padding: 5px;
+}
+
+body{
+  background-color: lightgray;
+}
+
+#monCost{
+  text-align: center;
+  font-size: 50px;
 }
 
 .tHead{
@@ -20,30 +30,25 @@ table, th, td {
 }
 
 .titles{
-float: left;
-display: flex;
-align-items: center;
-margin: 18.72px 10px 18.72px 10px;
+  float: left;
+  display: flex;
+  align-items: center;
+  margin: 18.72px 10px 18.72px 0px;
 }
 
 .but{
   float: left;
-font-size: 30px;
-margin: 0px 686px 50px 686px;
+  font-size: 30px;
+  margin: 0px 686px 50px 686px;
 }
 
-.but2{
-  vertical-align: middle;
-  width: 60px;
-  height: 35px;
-  font-size: 20px;
-}
+/*.removeBut{
+vertical-align: middle;
+width: 60px;
+height: 35px;
+font-size: 20px;
+}*/
 
 .thR{
   font-size: 12px;
-}
-
-#monCost{
-  text-align: center;
-  font-size: 50px;
 }
