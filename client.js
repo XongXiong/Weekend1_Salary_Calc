@@ -22,7 +22,7 @@ function main(){
   $('.submit').on('click', makeNewEmp);
   $('#monCost').replaceWith("<h2 id='monCost'>Average Monthly Cost = $" + mCost + "</h2>");
   $('.submit').on("click", function() {
-  $("input[type=text], textarea").val("");
+  $(".titles").val("");
 });
   // $('.removeBut').on('click', removeEmp);
 }
